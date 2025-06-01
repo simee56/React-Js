@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+//EMBEDDING EXPRESSIONS IN JSX
+function MyComponent() {
+    const name = "Simee Pandey";
+    //DYNAMIC ATTRIBUTE
+    const link = "https://google.com"
+    return <h1>Hello {name}. {MyFruits(fruits)} <a href={link}>Click me </a> </h1>;
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+//JAVASCRIPT IN JSX
+function MyFruits(fruits) {
+    return fruits.firstFruit + ' ' + fruits.secondFruit
+}
+
+const fruits = {
+    firstFruit : "Mango",
+    secondFruit : "Banana"
+};
+
+const root = ReactDom.createRoot(document.getElementById("root"));
+root.render(<MyComponent/>);
