@@ -11,6 +11,10 @@ const App = () => {
     <div className="Todo-container">
       <Header/>
       <TodoItems/>
+      <TodoItems/>
+      <TodoItems/>
+      <TodoItems/>
+      <TodoItems/>
       <Button/>
     </div>
   )
