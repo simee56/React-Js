@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// import ReactDom from "react-dom/client";
+
+import StateHoops from './components/hooks';
+
+
+// //EMBEDDING EXPRESSIONS IN JSX
+// function MyComponent() {
+//     const name = "Simee Pandey";
+
+//     //DYNAMIC ATTRIBUTE
+//     const link = "https://google.com"
+//     return <h1>Hello {name}. {MyFruits(fruits)} <a href={link}>Click me </a> </h1>;
+// }
+
+
+// //JAVASCRIPT IN JSX
+// function MyFruits(fruits) {
+//     return fruits.firstFruit + ' ' + fruits.secondFruit
+// }
+
+// const fruits = {
+//     firstFruit : "Mango",
+//     secondFruit : "Banana"
+// };
+
+// const root = ReactDom.createRoot(document.getElementById("root"));
+// root.render(<MyComponent/>);
+
+const App = () => {
+    return (
+        <div className="hooks">
+            {/* <MyComponent/> */}
+            <StateHoops/>
+        </div>
+    );
+};
 
 export default App;
