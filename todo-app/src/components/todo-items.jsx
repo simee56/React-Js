@@ -4,7 +4,7 @@ const TodoItems = (props) => {
     return (
         <li className="Todo-items">
           <span>  
-            {props.completed ? <></> : <input type="checkbox" /> }
+            {props.completed ? <></> : <input type="checkbox" /> }       {/* CONDITIONALLY RENDEROING */}
             <span className="todo-item-text">{props.items}</span>
           </span>
           <p>...</p>
