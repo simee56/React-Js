@@ -5,25 +5,25 @@ import React from "react";
 import StateHoops from './components/hooks';
 
 
-// //EMBEDDING EXPRESSIONS IN JSX
-// function MyComponent() {
-//     const name = "Simee Pandey";
+//EMBEDDING EXPRESSIONS IN JSX
+function MyComponent() {
+    const name = "Simee Pandey";
 
-//     //DYNAMIC ATTRIBUTE
-//     const link = "https://google.com"
-//     return <h1>Hello {name}. {MyFruits(fruits)} <a href={link}>Click me </a> </h1>;
-// }
+    //DYNAMIC ATTRIBUTE
+    const link = "https://google.com"
+    return <h1>Hello {name}. {MyFruits(fruits)} <a href={link}>Click me </a> </h1>;
+}
 
 
-// //JAVASCRIPT IN JSX
-// function MyFruits(fruits) {
-//     return fruits.firstFruit + ' ' + fruits.secondFruit
-// }
+//JAVASCRIPT IN JSX
+function MyFruits(fruits) {
+    return fruits.firstFruit + ' ' + fruits.secondFruit
+}
 
-// const fruits = {
-//     firstFruit : "Mango",
-//     secondFruit : "Banana"
-// };
+const fruits = {
+    firstFruit : "Mango",
+    secondFruit : "Banana"
+};
 
 // const root = ReactDom.createRoot(document.getElementById("root"));
 // root.render(<MyComponent/>);
@@ -31,7 +31,7 @@ import StateHoops from './components/hooks';
 const App = () => {
     return (
         <div className="hooks">
-            {/* <MyComponent/> */}
+            <MyComponent/>
             <StateHoops/>
         </div>
     );
