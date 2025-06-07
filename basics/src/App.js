@@ -3,6 +3,7 @@ import React from "react";
 // import ReactDom from "react-dom/client";
 
 import StateHoops from './components/hooks';
+import MyComponenet from './components/effecthooks';
 
 
 //EMBEDDING EXPRESSIONS IN JSX
