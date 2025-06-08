@@ -1,15 +1,15 @@
 import React, { useEffect} from "react";
 
-const MyComponenet = () => {
+const USeEffectHooks = () => {
     useEffect(() => {
         console.log("My componenet is mounting...")
     });
 
         return (
             <div>
-                <h3>MY component</h3>
+                <h3>USeEffect Hooks</h3>
             </div>
         );
 };
 
-export default MyComponenet;
+export default USeEffectHooks;
