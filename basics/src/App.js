@@ -3,7 +3,6 @@ import React from "react";
 // import ReactDom from "react-dom/client";
 
 import StateHoops from './components/hooks';
-import USeEffectHooks from './components/effecthooks';
 
 
 //EMBEDDING EXPRESSIONS IN JSX
@@ -34,7 +33,6 @@ const App = () => {
         <div className="hooks">
             <MyComponent/>
             <StateHoops/>
-            <USeEffectHooks/>
         </div>
     );
 };
