@@ -10,7 +10,7 @@ const MyComponent = () => {
 
      useEffect(() => {
         console.log("Value got updated.")
-    }, []);
+    }, [value]);
 
 
     return (
