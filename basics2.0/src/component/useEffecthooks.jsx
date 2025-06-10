@@ -6,9 +6,14 @@ const MyComponent = () => {
 
     useEffect(() => {
         console.log("My componenet is mounting....")
+        //For Unmounting
+        return function () {
+            console.log("Unmounting....")
+        }
+
     }, []);
 
-     useEffect(() => {
+    useEffect(() => {
         console.log("Value got updated.")
     }, [value]);
 
@@ -17,7 +22,7 @@ const MyComponent = () => {
         <div>
             <p>value is {value}</p>
             <button onClick={() => setValue(value + 1)}>Update Value</button>
-            <h3>My component</h3>;
+            <h3>My component</h3>
         </div>
     )
 }
