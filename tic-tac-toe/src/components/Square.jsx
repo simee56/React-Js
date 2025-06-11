@@ -1,9 +1,9 @@
 import React from "react";
 
-const Square = () => {
+const Square = (props) => {
     return (
         <div className="Square">
-            <h5>X</h5>
+            <h5>{props.value}</h5>
         </div>
     );
 };
