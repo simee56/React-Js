@@ -29,12 +29,19 @@ const Board = () => {
 
     const isWinner = checkWinner();
 
+
+    const gameIsTie = () => {
+        return state.every(cell => cell !== null) && !isWinner;
+    };
+
+    const isTie = gameIsTie();
+
     //THIS IS TO TRACK THAT USER IS SELECTING WHICH SQAURE.
     const handleClick = (index) => {
         if (state[index] !== null) {
             return;
         }
-        
+
         const copyState = [...state];
         copyState[index] = isXTurn ? "X" : "0";
         setState(copyState);
@@ -47,7 +54,12 @@ const Board = () => {
 
     return (
         <div className="board-container">
-            {isWinner ? (
+            {isTie ? (
+                <>
+                    <h3>The game is tied.</h3>
+                    <button onClick={handleReset}>Play again</button>
+                </>
+            ) : isWinner ? (
                 <>{isWinner} won the game.
                     <button onClick={handleReset}>Play again.</button>
                 </>
