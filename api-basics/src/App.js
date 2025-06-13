@@ -2,6 +2,7 @@ import './App.css';
 
 import React, { useState, useEffect } from "react";
 import { getPosts } from './Api';
+import PostCard from './components/postCard';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   return (
     (<div className="App">
       {
-        data ? data.map((e) => <li>{e.title}</li>): <p>Please provide some data.</p>
+        data ? data.map((e) => <PostCard title ={e.title} body={e.body}/>): <p>Please provide some data.</p>
       }
     </div>
     )
