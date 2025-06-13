@@ -1,10 +1,10 @@
 import React from "react";
 
-const PostCard = () => {
+const PostCard = (props) => {
     return (
     <div className="post-card">
-        <h3>Title</h3>
-        <p>Body</p>
+        <h3>{props.Title}</h3>
+        <p>{props.Body}</p>
     </div>
     )}
 export default PostCard;
