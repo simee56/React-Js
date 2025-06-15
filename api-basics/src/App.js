@@ -16,7 +16,7 @@ function App() {
   return (
     (<div className="App">
       {
-        data ? data.map((e) => <PostCard title ={e.title} body={e.body}/>): <p>Please provide some data.</p>
+        data ? data.map((e) => <PostCard title ={e.title} body={e.body} userID={e.userID} id={e.id}/>): <p>Please provide some data.</p>
       }
     </div>
     )
