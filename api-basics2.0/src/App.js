@@ -1,20 +1,20 @@
 import './App.css';
 
-import React , {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { getUsers } from './Api';
 import UserCard from './components/userCard';
 
 
 function App() {
-  const[userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState(null);
 
-  useEffect(()=> {
-        getUsers().then((user) => setUserData(user.results[0]))
+  useEffect(() => {
+    getUsers().then((user) => setUserData(user.results[0]))
   }
-  ,[]);
+    , []);
 
   const refresh = () => {
-        getUsers().then((user) => setUserData(user.results[0]))
+    getUsers().then((user) => setUserData(user.results[0]))
   }
 
   return (
