@@ -4,11 +4,10 @@ import Item from './component/Item';
 function App() {
   return (
     <div className="App">
-      <ul>
-        <li> <Item name="MAcBook" price="100000" />
-      <Item name="PenDrive" price="1000" />
-      <Item name="Pen" price="50" />
-      <Item name="Tops" price="300" /></li></ul>
+      <Item name="MAcBook" price="{100000}" />
+      <Item name="PenDrive" price="{1000}" />
+      <Item name="Pen" price="{50}" />
+      <Item name="Tops" price="{300}" />
 
     </div>
   );
