@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { counterProvider } from './Contexts/Counter';
+import { CounterProvider } from './Contexts/Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <counterProvider />
+    <CounterProvider />
     <App />
-    <counterProvider />
+    <CounterProvider />
   </React.StrictMode>
 );
 
