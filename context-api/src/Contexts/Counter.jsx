@@ -8,5 +8,5 @@ export const CounterProvider = (props) => {
         <counterContext.Provider value={{ count }} >
             {props.children}
         </counterContext.Provider>
-    )
+    );
 };
