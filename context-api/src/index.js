@@ -9,9 +9,9 @@ import { CounterProvider } from './Contexts/Counter';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CounterProvider />
+    <CounterProvider>
     <App />
-    <CounterProvider />
+    </CounterProvider>
   </React.StrictMode>
 );
 
