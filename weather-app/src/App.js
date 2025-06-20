@@ -6,11 +6,12 @@ import Search from './components/search';
 function App() {
   return (
     <div className="App">
+      <Search />
+      <Button value="Search" />
       <Card />
-      <Search/>
-      <Button />
+      <Button value="Refresh" />
     </div>
   );
-}
+};
 
 export default App;
