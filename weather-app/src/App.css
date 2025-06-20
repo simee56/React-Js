@@ -32,7 +32,30 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.Card {
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Search {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 0px;
+  font-size: 25px;
+  margin: 10px;
+  cursor: pointer;
+
+}
+.btn{
+  border:0px;
+  padding :10px 20px;
+  border-radius: 10px;
+  margin: 5px;
 }
