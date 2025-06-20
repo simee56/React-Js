@@ -6,6 +6,7 @@ import Search from './components/search';
 function App() {
   return (
     <div className="App">
+      <h1>Weather Forecast</h1>
       <Search />
       <Button value="Search" />
       <Card />
