@@ -4,9 +4,9 @@ const Search = (props) => {
     return (
         < input
             className="Search"
-            placeholder="{props.placeholder}"
-            value="{props.value}"
-            onChange="{props.onChange}" />
+            placeholder={props.placeholder}
+            value={props.value}
+            onChange={props.onChange} />
     );
 };
 
