@@ -1,13 +1,13 @@
 import { createContext, useContext, useState } from "react";
 import { getWeatherDataForCity } from "../Api";
 
-const weatherContext = createContext(null);
+const WeatherContext = createContext(null);
 
 export const useWeather = () => {
-    return useContext(weatherContext)
+    return useContext(WeatherContext)
 };
 
-export const weatherProvider = (props) => {
+export const WeatherProvider = (props) => {
     const [data, setdata] = useState(null);
     const [searchCity, setSearchCity] = useState(null);
 
@@ -16,8 +16,8 @@ export const weatherProvider = (props) => {
         setdata(response)
     };
 
-    <weatherContext.Provider
+    <WeatherContext.Provider
         value={{ searchCity, data, setSearchCity, fetchData }} >
         {props.children}
-    </weatherContext.Provider>
+    </WeatherContext.Provider>
 };
