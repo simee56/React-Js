@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { weatherProvider } from './contexts/weather';
+import { WeatherProvider } from './contexts/weather';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <weatherProvider>
+    <WeatherProvider>
       <App />
-    </weatherProvider>
+    </WeatherProvider>
 
   </React.StrictMode>
 );
