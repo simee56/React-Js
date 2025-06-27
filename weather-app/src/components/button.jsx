@@ -1,9 +1,10 @@
 import React from "react";
 
-const Value = (props) => {
+const Button = (props) => {
     return (
-       <h5>{props.value}</h5>
-    )
-}
-
-export default Value;
+        <button className="btn" onClick={props.onClick}>
+            {props.value}
+            </button>
+    );
+};
+export default Button;
