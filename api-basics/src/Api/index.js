@@ -3,5 +3,5 @@ export const getPosts = async () => {
         method: "GET",
     });
     return response.json();
-}
+};
 
