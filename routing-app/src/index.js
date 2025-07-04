@@ -25,11 +25,11 @@ const Home = () => {
             <NavLink style={{ display : 'block'}} to={`/post/${post.id}`}>
               {post.title}
             </NavLink>
-          ))
-        }
+          ));
+        };
       </div>
     </div>
-  )
+  );
 }
 
 
