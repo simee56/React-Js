@@ -30,7 +30,7 @@ const Home = () => {
       </div>
     </div>
   );
-}
+};
 
 
 const PostPage = () => {
@@ -48,7 +48,7 @@ const PostPage = () => {
       <h1>{data.title}</h1>
       <p>{data.body}</p>
     </div>
-  )
+  );
 };
 
 
