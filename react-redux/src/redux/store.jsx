@@ -2,9 +2,9 @@ import { createStore } from "redux"
 
 const reducer = (state = 0, action) => {
     switch (action.type) {
-        case ("INCREMENT "):
+        case "INCREMENT ":
             return state + 1;
-        case ("DECREMENT"):
+        case "DECREMENT":
             return state - 1;
         default:
             return state;
