@@ -1,8 +1,9 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider,signInWithPopup  } from "firebase/auth";
 import { app } from "../firebase";
 import { React, useState } from "react";
 
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
 
 const SignInPage = () => {
     const [email, setEmail] = useState('');
@@ -12,6 +13,10 @@ const SignInPage = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((value) => console.log("signIn success"))
             .catch((err) => console.log(err));
+    }
+
+    const signUpWithGoogle = () =>{
+        signInWithPopup(auth, googleProvider)
     }
     return (
         <div className="signin-page">
@@ -30,7 +35,9 @@ const SignInPage = () => {
                 type="password"
                 placeholder="Enter your password"
             />
-            <button>Singin</button>
+            <br />
+            <button onClick={signUpWithGoogle}>Login with Google</button>
+            <button onClick={Signinuser}>Singin</button>
         </div>
     )
 };
