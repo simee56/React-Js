@@ -6,7 +6,8 @@ import {
   getDoc,
   query,
   where,
-  getDocs
+  getDocs,
+  updateDoc
 } from "firebase/firestore";
 import { app } from "./firebase"
 import './App.css'
@@ -48,6 +49,14 @@ function App() {
     snapShot.forEach((data) => console.log(data.data()));
   };
 
+  //TO UPDATE DOCUMENT
+  const update = async () => {
+    const docRef = doc(fireStore, "Cities", "BgvFbSuzl5l1ahyzCadr");
+    await updateDoc(docRef, {
+      name: "New Delhi"
+    });
+  }
+
   return (
     <div className="App">
       <h1>Firebase Firestore</h1>
@@ -55,6 +64,8 @@ function App() {
       <button onClick={writeSubData}>Put SubData</button>
       <button onClick={getDocument}>Get Document</button>
       <button onClick={getDocumnetByQuery}>Get Documents By Query</button>
+      <button onClick={update}>Update Doc</button>
+
     </div>
   );
 }
