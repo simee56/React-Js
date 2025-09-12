@@ -35,7 +35,6 @@ function App() {
   if (user == null) {
     return (
       <div className="App">
-        <h1>Signup Page</h1>
         <SignUpPage />
         <SignInPage />
       </div>
