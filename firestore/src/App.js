@@ -1,4 +1,13 @@
-import { getFirestore, collection, addDoc, doc, getDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  doc,
+  getDoc,
+  query,
+  where,
+  getDocs
+} from "firebase/firestore";
 import { app } from "./firebase"
 import './App.css'
 
@@ -23,12 +32,20 @@ function App() {
     console.log("Result", reusltOfSubData)
   };
 
-  //TO READ A DOCUMENT 
+  //TO READ A DOCUMENT IF YOU KNOW THE ID
   const getDocument = async () => {
     const ref = doc(fireStore, "Cities", "BgvFbSuzl5l1ahyzCadr");
     const snap = await getDoc(ref);
 
     console.log(snap.data());
+  };
+
+  //TO GET A DOCUMENT - QUERY  
+  const getDocumnetByQuery = async () => {
+    const documentRef = collection(fireStore, "users");
+    const q = query(documentRef, where("IsFemale", "==", "true"));
+    const snapShot = await getDocs(q);
+    snapShot.forEach((data) => console.log(data.data()));
   };
 
   return (
@@ -37,8 +54,7 @@ function App() {
       <button onClick={writeData}>Put Data</button>
       <button onClick={writeSubData}>Put SubData</button>
       <button onClick={getDocument}>Get Document</button>
-
-
+      <button onClick={getDocumnetByQuery}>Get Documents By Query</button>
     </div>
   );
 }
