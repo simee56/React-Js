@@ -37,7 +37,7 @@ export const FirebaseProvider = (props) => {
     return <firebaseContext.Provider
         value={{
             signupUserWithEmailAndPassword,
-            signInWithEmailAndPassword
+            signinUserWithEmailAndPassword
         }}>
         {props.children}
     </firebaseContext.Provider>
