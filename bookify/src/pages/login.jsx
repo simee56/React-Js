@@ -11,8 +11,8 @@ const LoginPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("signin up user......");
-        const result = await firebase.signupUserWithEmailAndPassword
+        console.log("login in user......");
+        const result = await firebase.signinUserWithEmailAndPassword
             (
                 email,
                 password
