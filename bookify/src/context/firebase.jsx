@@ -1,5 +1,7 @@
 import { createContext, useContext } from "react";
 import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword, EmailAuthCredential } from "firebase/auth";
+
 
 const firebaseContext = createContext(null);
 
@@ -13,10 +15,19 @@ const firebaseConfig = {
     databaseUrl: "https://firstproject-ee77a-default-rtdb.firebaseio.com/"
 };
 
-export const useFirebase = () => useContext(firebaseContext);
+export const useFirebase = () => useContext(firebaseContext)
 
-export const app = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
+const firebaseAuth = getAuth(firebaseApp);
+
 
 export const FirebaseProvider = (props) => {
-    return <firebaseContext.Provider>{props.children}</firebaseContext.Provider>
+    const signupUSerWithEmailAndPassword = (email, password) => {
+        createUserWithEmailAndPassword(firebaseAuth, email, password)
+    };
+
+    return <firebaseContext.Provider
+        value={{ signupUSerWithEmailAndPassword }}>
+        {props.children}
+    </firebaseContext.Provider>
 }
