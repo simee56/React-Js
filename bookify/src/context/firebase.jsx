@@ -9,7 +9,7 @@ import {
     onAuthStateChanged
 }
     from "firebase/auth";
-
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseContext = createContext(null);
 
@@ -26,14 +26,15 @@ export const useFirebase = () => useContext(firebaseContext)
 
 const firebaseApp = initializeApp(firebaseConfig);
 const firebaseAuth = getAuth(firebaseApp);
+const firestore = getFirestore(firebaseApp);
 const googleProvider = new GoogleAuthProvider()
 
 export const FirebaseProvider = (props) => {
 
-    const[user,setUser] = useState(null);
+    const [user, setUser] = useState(null);
     useEffect(() => {
         onAuthStateChanged(firebaseAuth, user => {
-            if(user) setUser(user);
+            if (user) setUser(user);
             else setUser(null);
         })
     })
@@ -46,9 +47,11 @@ export const FirebaseProvider = (props) => {
         signInWithEmailAndPassword(firebaseAuth, email, password)
     };
 
-    const singinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider); 
+    const singinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider);
 
-    const isLoggedIn =user ?true: false;
+    const handleCreateNewListing = (name, isbnNumber, price, coverPic) => {}
+
+    const isLoggedIn = user ? true : false;
 
 
     return <firebaseContext.Provider
