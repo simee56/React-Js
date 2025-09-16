@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import { useFirebase } from "../context/firebase";
 
 const ListingPage = () => {
-
+    const firebase = useFirebase();
     const [name, setName] = useState('');
     const [isbnNumber, setIsbnNumber] = useState('');
     const [price, setPrice] = useState('');
     const [coverPic, setCoverPic] = useState('');
 
-    const handleSubmit = () => { }
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic)
+     }
 
     return (
         <div className="container">
