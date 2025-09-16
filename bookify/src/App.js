@@ -6,6 +6,7 @@ import MyNavbar from './components/navbar';
 //PAGES 
 import RegisterPage from "./pages/register";
 import LoginPage from "./pages/login";
+import ListingPage from './pages/list';
 
 
 //CSS
@@ -20,6 +21,8 @@ function App() {
         <Route path="/" element={<h1>Home page</h1>}></Route>
         <Route path="/registration" element={<RegisterPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/book/list" element={<ListingPage />}></Route>
+
       </Routes>
     </div>
   );
