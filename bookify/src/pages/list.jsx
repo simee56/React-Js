@@ -1,40 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
 const ListingPage = () => {
+
+    const [name, setName] = useState('');
+    const [isbnNumber, setIsbnNumber] = useState('');
+    const [price, setPrice] = useState('');
+    const [coverPic, setCoverPic] = useState('');
+
+    const handleSubmit = () => { }
+
     return (
         <div className="container">
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Enter Book Name</Form.Label>
                     <Form.Control
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        type="email"
-                        placeholder="Enter email"
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                        type="text"
+                        placeholder="ISBN Number"
                     />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>ISBn</Form.Label>
                     <Form.Control
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
+                        onChange={(e) => setIsbnNumber(e.target.value)}
+                        value={isbnNumber}
                         type="password"
                         placeholder="Password"
                     />
                 </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Price</Form.Label>
+                    <Form.Control
+                        onChange={(e) => setPrice(e.target.value)}
+                        value={price}
+                        type="text"
+                        placeholder="price"
+                    />
+                </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Cover Pic</Form.Label>
+                    <Form.Control
+                        onChange={(e) => setCoverPic(e.target.files[0])}
+                        value={coverPic}
+                        type="file"
+                    />
+                </Form.Group>
                 <Button variant="primary" type="submit">
-                    Login
+                    Create
                 </Button>
             </Form>
-
-            <h1 className='mt-5 mb-5'>OR</h1>
-            <Button onClick={firebase.singinWithGoogle} variant='danger'>Sign in  with google</Button>
         </div>
     )
 };
