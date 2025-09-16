@@ -29,7 +29,8 @@ const LoginPage = () => {
 
     };
 
-    return <div className="container">
+    return (
+    <div className="container">
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -60,6 +61,7 @@ const LoginPage = () => {
         <h1 className='mt-5 mb-5'>OR</h1>
         <Button onClick={firebase.singinWithGoogle} variant='danger'>Sign in  with google</Button>
     </div>
+    )
 };
 
 export default LoginPage;
