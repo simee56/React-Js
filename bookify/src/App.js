@@ -1,5 +1,8 @@
 import './App.css';
 
+////COMPONENTS
+import MyNavbar from './components/navbar';
+
 //PAGES 
 import RegisterPage from "./pages/register";
 import LoginPage from "./pages/login";
@@ -11,12 +14,14 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<h1>Home page</h1>}></Route>
-      <Route path="/registration" element={<RegisterPage />}></Route>
-      <Route path="/login" element={<LoginPage />}></Route>
-
-    </Routes>
+    <div>
+      <MyNavbar />
+      <Routes>
+        <Route path="/" element={<h1>Home page</h1>}></Route>
+        <Route path="/registration" element={<RegisterPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+      </Routes>
+    </div>
   );
 }
 
