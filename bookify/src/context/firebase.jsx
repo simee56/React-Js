@@ -9,7 +9,8 @@ import {
     onAuthStateChanged
 }
     from "firebase/auth";
-import { getFirestore } from 'firebase/firestore'
+import { getFirestore, collection, addDoc } from 'firebase/firestore'
+import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 const firebaseContext = createContext(null);
 
@@ -27,7 +28,8 @@ export const useFirebase = () => useContext(firebaseContext)
 const firebaseApp = initializeApp(firebaseConfig);
 const firebaseAuth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
-const googleProvider = new GoogleAuthProvider()
+const storage = getStorage(firebaseApp);
+const googleProvider = new GoogleAuthProvider();
 
 export const FirebaseProvider = (props) => {
 
@@ -49,17 +51,29 @@ export const FirebaseProvider = (props) => {
 
     const singinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider);
 
-    const handleCreateNewListing = (name, isbnNumber, price, coverPic) => {}
-
+    const handleCreateNewListing = async (name, isbnNumber, price, coverPic) => {
+        const imageRef = ref(storage, `uploads/iamges/${Date.now()}-${coverPic.name}`);
+        const uploadResult = await uploadBytes(imageRef, coverPic);
+        return await addDoc(collection(firestore, 'books'), {
+            name,
+            isbnNumber,
+            price,
+            imageURL: uploadResult.ref.fullPath,
+            userID: user.uid,
+            userEmail: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL
+        })
+    }
     const isLoggedIn = user ? true : false;
-
 
     return <firebaseContext.Provider
         value={{
             signupUserWithEmailAndPassword,
             signinUserWithEmailAndPassword,
             singinWithGoogle,
-            isLoggedIn
+            isLoggedIn,
+            handleCreateNewListing
         }}>
         {props.children}
     </firebaseContext.Provider>
